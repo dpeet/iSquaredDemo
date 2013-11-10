@@ -1,6 +1,8 @@
 package com.unrulyrecursion.android.iSquaredDemo;
 
 import com.unrulyrecursion.android.iSquaredDemo.util.SystemUiHider;
+import com.wikitude.architect.ArchitectView;
+import com.wikitude.architect.ArchitectView.ArchitectConfig;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -17,6 +19,7 @@ import android.view.View;
  * @see SystemUiHider
  */
 public class ARActivity extends Activity {
+	ArchitectView architectView;
 	/**
 	 * Whether or not the system UI should be auto-hidden after
 	 * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -50,6 +53,11 @@ public class ARActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_ar);
+		
+		// Setting AndArchitect things
+		this.architectView = (ArchitectView)this.findViewById( R.id.architectView );
+		final ArchitectConfig config = new ArchitectConfig( "" /* license key */ );
+		this.architectView.onCreate( config );
 
 //		final View controlsView = findViewById(R.id.fullscreen_content_controls);
 //		final View contentView = findViewById(R.id.fullscreen_content);
@@ -126,6 +134,14 @@ public class ARActivity extends Activity {
 		// created, to briefly hint to the user that UI controls
 		// are available.
 		delayedHide(100);
+		
+		// Load ar experience
+		this.architectView.onPostCreate();
+		try {
+			this.architectView.load( "ARdemo.html" );
+		}
+		catch (Exception e) {
+		}
 	}
 
 	/**
