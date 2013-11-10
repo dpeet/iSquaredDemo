@@ -1,0 +1,6 @@
+notes
+bin/*
+.project
+.classpath
+.settings/*
+.DS_Store
