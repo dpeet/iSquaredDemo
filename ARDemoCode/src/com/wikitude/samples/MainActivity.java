@@ -4,9 +4,12 @@ package com.wikitude.samples;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -80,9 +83,22 @@ public class MainActivity extends ListActivity{
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
 		
-		//launch activity
-		Log.d("Intent", intent.toString());
-		this.startActivity( intent );
+		// launch activity
+		Log.d("DebugIntent", "DebugIntent " + intent.toString());
+		String Tag = "DebugIntent";
+		Bundle bundle = intent.getExtras();
+		for (String key : bundle.keySet()) {
+		    Object value = bundle.get(key);
+		    if(value.toString().charAt(0) == '['){
+		    	Log.d(Tag, "DebugIntent1" + Arrays.deepToString((Object[]) value));
+		    }
+		    Log.d(Tag, "DebugIntent2: " + String.format("%s %s (%s)", key,  
+		        value.toString(), value.getClass().getName()));
+		}
+
+		this.startActivity(intent);
+		
+		
 		
 	}
 
