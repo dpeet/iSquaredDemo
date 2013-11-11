@@ -12,6 +12,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.opengl.GLES20;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -35,7 +36,7 @@ public class MainActivity extends ListActivity{
 		// ensure to clean cache when it is no longer required
 		MainActivity.deleteDirectoryContent ( ArchitectView.getCacheDirectoryAbsoluteFilePath(this) );
 
-		
+		/*
 		// extract names of samples from res/arrays
 		final String[] values = this.getListLabels();
 
@@ -44,10 +45,10 @@ public class MainActivity extends ListActivity{
 		
 		
 		//doing it straight
-		/*
+		*/
 		final Intent intent = new Intent( this, MainSamplesListActivity.class );
 
-		final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(3);
+		final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(0);
 		final String activityTitle = activitiesToLaunch.get(0).categoryId + ". " + activitiesToLaunch.get(0).categoryName.replace("$", " ");
 		String[] activityTitles = new String[activitiesToLaunch.size()];
 		String[] activityUrls = new String[activitiesToLaunch.size()];
@@ -81,7 +82,7 @@ public class MainActivity extends ListActivity{
 		
 		//launch activity
 		this.startActivity( intent );
-		*/
+		
 	}
 
 	@Override
@@ -89,7 +90,7 @@ public class MainActivity extends ListActivity{
 		super.onListItemClick( l, v, position, id );
 			
 			final Intent intent = new Intent( this, MainSamplesListActivity.class );
-			System.out.println(position + " position");
+			Log.d("onListItemClick", "position: " + position);
 			final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(position);
 			final String activityTitle = activitiesToLaunch.get(0).categoryId + ". " + activitiesToLaunch.get(0).categoryName.replace("$", " ");
 			String[] activityTitles = new String[activitiesToLaunch.size()];
