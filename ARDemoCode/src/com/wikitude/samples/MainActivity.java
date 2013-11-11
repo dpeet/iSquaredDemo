@@ -36,16 +36,16 @@ public class MainActivity extends ListActivity{
 		// ensure to clean cache when it is no longer required
 		MainActivity.deleteDirectoryContent ( ArchitectView.getCacheDirectoryAbsoluteFilePath(this) );
 
-		
+		/*
 		// extract names of samples from res/arrays
 		final String[] values = this.getListLabels();
 
 		// use default list-ArrayAdapter
 		this.setListAdapter( new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, android.R.id.text1, values ) );
 		
-		
+		*/
 		//doing it straight
-		/*
+		
 		final Intent intent = new Intent( this, MainSamplesListActivity.class );
 
 		final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(0);
@@ -81,8 +81,9 @@ public class MainActivity extends ListActivity{
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
 		
 		//launch activity
+		Log.d("Intent", intent.toString());
 		this.startActivity( intent );
-		*/
+		
 	}
 
 	@Override
@@ -124,6 +125,8 @@ public class MainActivity extends ListActivity{
 			intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
 			
 			// launch activity
+			Log.d("thistostring2", this.toString());
+			Log.d("Intent2", intent.toString());
 			this.startActivity( intent );
 			
 	}
