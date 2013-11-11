@@ -53,7 +53,7 @@ public class ARchitectUrlLauncherActivity extends Activity {
 		super.onCreate( savedInstanceState );
 		
 		/* set content view to parent layout*/
-		this.setContentView( R.layout.urllauncher_main );
+		this.setContentView(R.layout.urllauncher_main );
 
 		/* the web-view containing EULA text*/
 		final AutoCompleteTextView url = (AutoCompleteTextView)this.findViewById( R.id.url );

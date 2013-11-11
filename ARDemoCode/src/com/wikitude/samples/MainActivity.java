@@ -35,11 +35,53 @@ public class MainActivity extends ListActivity{
 		// ensure to clean cache when it is no longer required
 		MainActivity.deleteDirectoryContent ( ArchitectView.getCacheDirectoryAbsoluteFilePath(this) );
 
+		
 		// extract names of samples from res/arrays
 		final String[] values = this.getListLabels();
 
-		// use default list-ArrayAdapter */
+		// use default list-ArrayAdapter
 		this.setListAdapter( new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, android.R.id.text1, values ) );
+		
+		
+		//doing it straight
+		/*
+		final Intent intent = new Intent( this, MainSamplesListActivity.class );
+
+		final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(3);
+		final String activityTitle = activitiesToLaunch.get(0).categoryId + ". " + activitiesToLaunch.get(0).categoryName.replace("$", " ");
+		String[] activityTitles = new String[activitiesToLaunch.size()];
+		String[] activityUrls = new String[activitiesToLaunch.size()];
+		String[] activityClasses = new String[activitiesToLaunch.size()];
+		
+		// check if AR.VideoDrawables are supported on the current device. if not -> show hint-Toast message
+		if (activitiesToLaunch.get(0).categoryId == 6 && ! MainActivity.isVideoDrawablesSupported()) {
+			Toast.makeText(this, R.string.videosrawables_fallback, Toast.LENGTH_LONG).show();
+		}
+		
+		// find out which Activity to launch when sample row was pressed, some handle document.location = architectsdk:// events, others inject poi data from native via javascript
+		for (int i= 0; i< activitiesToLaunch.size(); i++) {
+			final SampleMeta meta = activitiesToLaunch.get(i);
+			activityTitles[i] = (meta.categoryId + "." + meta.sampleId + " " + meta.sampleName.replace("$", " "));
+			activityUrls[i] =  (meta.path);
+			if (meta.categoryId == 4 && meta.sampleId==1) {
+				activityClasses[i] = ("com.wikitude.samples.SampleCamContentFromNativeActivity");
+			} else if (meta.categoryId == 5 && meta.sampleId==5) {
+				activityClasses[i] = ("com.wikitude.samples.SampleCamHandlePoiDetailActivity");
+			} else if (meta.categoryId == 5 && meta.sampleId==6) {
+				activityClasses[i] = ("com.wikitude.samples.SampleCamCaptureScreenActivity");
+			} else {
+				activityClasses[i] = ("com.wikitude.samples.SampleCamActivity");
+			}
+		}
+		
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_ARCHITECT_WORLD_URLS_ARRAY, activityUrls);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
+		
+		//launch activity
+		this.startActivity( intent );
+		*/
 	}
 
 	@Override
@@ -47,7 +89,7 @@ public class MainActivity extends ListActivity{
 		super.onListItemClick( l, v, position, id );
 			
 			final Intent intent = new Intent( this, MainSamplesListActivity.class );
-
+			System.out.println(position + " position");
 			final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(position);
 			final String activityTitle = activitiesToLaunch.get(0).categoryId + ". " + activitiesToLaunch.get(0).categoryName.replace("$", " ");
 			String[] activityTitles = new String[activitiesToLaunch.size()];
@@ -80,7 +122,7 @@ public class MainActivity extends ListActivity{
 			intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
 			intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
 			
-			/* launch activity */
+			// launch activity
 			this.startActivity( intent );
 			
 	}
