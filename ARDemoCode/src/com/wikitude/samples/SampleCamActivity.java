@@ -2,6 +2,7 @@ package com.wikitude.samples;
 
 import android.hardware.SensorManager;
 import android.location.LocationListener;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import com.wikitude.architect.ArchitectView.ArchitectUrlListener;
@@ -9,6 +10,7 @@ import com.wikitude.architect.ArchitectView.SensorAccuracyChangeListener;
 import com.wikitude.sdksamples.R;
 
 public class SampleCamActivity extends AbstractArchitectCamActivity {
+	
 
 	/**
 	 * extras key for activity title, usually static and set in Manifest.xml
@@ -24,6 +26,19 @@ public class SampleCamActivity extends AbstractArchitectCamActivity {
 	/**
 	 * last time the calibration toast was shown, this avoids too many toast shown when compass needs calibration
 	 */
+	/*
+	public void onCreate( Bundle savedInstanceState ) {
+		super.onCreate( savedInstanceState );
+		this.setContentView( this.getContentViewId() );
+		
+		// check if AR.VideoDrawables are supported on the current device. if not -> show hint-Toast message
+				if (activitiesToLaunch.get(0).categoryId == 6 && ! MainActivity.isVideoDrawablesSupported()) {
+					Toast.makeText(this, R.string.videosrawables_fallback, Toast.LENGTH_LONG).show();
+				}
+		
+		
+	}
+	*/
 	private long lastCalibrationToastShownTimeMillis = System.currentTimeMillis();
 
 	@Override

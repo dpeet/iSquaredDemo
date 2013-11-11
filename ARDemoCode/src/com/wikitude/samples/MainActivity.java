@@ -36,7 +36,7 @@ public class MainActivity extends ListActivity{
 		// ensure to clean cache when it is no longer required
 		MainActivity.deleteDirectoryContent ( ArchitectView.getCacheDirectoryAbsoluteFilePath(this) );
 
-		/*
+		
 		// extract names of samples from res/arrays
 		final String[] values = this.getListLabels();
 
@@ -45,7 +45,7 @@ public class MainActivity extends ListActivity{
 		
 		
 		//doing it straight
-		*/
+		/*
 		final Intent intent = new Intent( this, MainSamplesListActivity.class );
 
 		final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(0);
@@ -82,7 +82,7 @@ public class MainActivity extends ListActivity{
 		
 		//launch activity
 		this.startActivity( intent );
-		
+		*/
 	}
 
 	@Override
