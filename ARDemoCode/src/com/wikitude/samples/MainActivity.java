@@ -27,6 +27,7 @@ import com.wikitude.sdksamples.R;
  * Activity launched when pressing app-icon.
  * It uses very basic ListAdapter for UI representation
  */
+
 public class MainActivity extends ListActivity{
 	
 	@Override
@@ -49,6 +50,7 @@ public class MainActivity extends ListActivity{
 		
 		final Intent intent = new Intent( this, MainSamplesListActivity.class );
 
+		/*
 		final List<SampleMeta> activitiesToLaunch = getActivitiesToLaunch(0);
 		final String activityTitle = activitiesToLaunch.get(0).categoryId + ". " + activitiesToLaunch.get(0).categoryName.replace("$", " ");
 		String[] activityTitles = new String[activitiesToLaunch.size()];
@@ -80,6 +82,25 @@ public class MainActivity extends ListActivity{
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
+	
+		*/
+	
+		//using info from the log file
+		
+		final String activityTitle = "3. Point Of Interest";
+		String[] activityTitles = new String[1];
+		String[] activityUrls = new String[1];
+		String[] activityClasses = new String[1];
+		
+		activityTitles[0] = "3.3 Multiple Pois";
+		activityUrls[0] = "3_Point$Of$Interest_3_Multiple$Pois";
+		activityClasses[0] = "com.wikitude.samples.SampleCamActivity";
+		
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_ARCHITECT_WORLD_URLS_ARRAY, activityUrls);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
+		
 		
 		// launch activity
 		Log.d("DebugIntent", "DebugIntent " + intent.toString());
@@ -88,18 +109,12 @@ public class MainActivity extends ListActivity{
 		for (String key : bundle.keySet()) {
 		    Object value = bundle.get(key);
 		    if(value.toString().charAt(0) == '['){
-		    	Log.d(Tag, "DebugIntent1" + Arrays.deepToString((Object[]) value));
+		    	Log.d(Tag, "DebugIntent1: " + key + " " + Arrays.deepToString((Object[]) value));
 		    }
 		    Log.d(Tag, "DebugIntent2: " + String.format("%s %s (%s)", key,  
 		        value.toString(), value.getClass().getName()));
 		}
-		//using info from the log file
-		/*
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_ARCHITECT_WORLD_URLS_ARRAY, activityUrls);
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
-		*/
+		
 		
 		this.startActivity(intent);
 		
