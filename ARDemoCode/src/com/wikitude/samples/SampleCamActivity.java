@@ -1,8 +1,12 @@
 package com.wikitude.samples;
 
+import java.util.Arrays;
+
+import android.content.Intent;
 import android.hardware.SensorManager;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.wikitude.architect.ArchitectView.ArchitectUrlListener;
@@ -30,7 +34,23 @@ public class SampleCamActivity extends AbstractArchitectCamActivity {
 
 	@Override
 	public String getARchitectWorldPath() {
-		return "3_Point$Of$Interest_3_Multiple$Pois";
+		/*
+		Intent intent = getIntent();
+		Log.d("DebugIntent", "DebugIntent sample" + intent.toString());
+		String Tag = "DebugIntentsample";
+		Bundle bundle = intent.getExtras();
+		for (String key : bundle.keySet()) {
+		    Object value = bundle.get(key);
+		    if(value.toString().charAt(0) == '['){
+		    	Log.d(Tag, "DebugIntent1: " + key + " " + Arrays.deepToString((Object[]) value));
+		    }
+		    Log.d(Tag, "DebugIntent2: " + String.format("%s %s (%s)", key,  
+		        value.toString(), value.getClass().getName()));
+		}
+		*/
+		
+		
+		return "3_Multiple$Pois";
 		//return getIntent().getExtras().getString(EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL);
 	}
 
