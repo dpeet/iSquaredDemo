@@ -6,10 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -95,7 +93,14 @@ public class MainActivity extends ListActivity{
 		    Log.d(Tag, "DebugIntent2: " + String.format("%s %s (%s)", key,  
 		        value.toString(), value.getClass().getName()));
 		}
-
+		//using info from the log file
+		/*
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_ARCHITECT_WORLD_URLS_ARRAY, activityUrls);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
+		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
+		*/
+		
 		this.startActivity(intent);
 		
 		

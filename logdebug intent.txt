@@ -1,1 +1,8 @@
-11-11 17:45:06.905: D/DebugIntent(11137): DebugIntent2: activitiesTitles [Ljava.lang.String;@425dd578 ([Ljava.lang.String;)
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent Intent { cmp=com.wikitude.sdksamples/com.wikitude.samples.MainSamplesListActivity (has extras) }
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent2: activityTitle 3. Point Of Interest (java.lang.String)
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent1[com.wikitude.samples.SampleCamActivity]
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent2: activitiesClassnames [Ljava.lang.String;@425e1f50 ([Ljava.lang.String;)
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent1[3.3 Multiple Pois]
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent2: activitiesTitles [Ljava.lang.String;@425e1f20 ([Ljava.lang.String;)
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent1[3_Point$Of$Interest_3_Multiple$Pois]
+11-11 23:46:25.652: D/DebugIntent(21142): DebugIntent2: activitiesArchitectWorldUrls [Ljava.lang.String;@425e1f38 ([Ljava.lang.String;)
