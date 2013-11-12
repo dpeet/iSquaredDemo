@@ -26,25 +26,12 @@ public class SampleCamActivity extends AbstractArchitectCamActivity {
 	/**
 	 * last time the calibration toast was shown, this avoids too many toast shown when compass needs calibration
 	 */
-	/*
-	public void onCreate( Bundle savedInstanceState ) {
-		super.onCreate( savedInstanceState );
-		this.setContentView( this.getContentViewId() );
-		
-		// check if AR.VideoDrawables are supported on the current device. if not -> show hint-Toast message
-				if (activitiesToLaunch.get(0).categoryId == 6 && ! MainActivity.isVideoDrawablesSupported()) {
-					Toast.makeText(this, R.string.videosrawables_fallback, Toast.LENGTH_LONG).show();
-				}
-		
-		
-	}
-	*/
 	private long lastCalibrationToastShownTimeMillis = System.currentTimeMillis();
 
 	@Override
 	public String getARchitectWorldPath() {
-		return getIntent().getExtras().getString(
-				EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL);
+		return "3_Point$Of$Interest_3_Multiple$Pois";
+		//return getIntent().getExtras().getString(EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL);
 	}
 
 	@Override

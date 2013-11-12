@@ -45,7 +45,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.wikitude.samples.MainActivity"
+            android:name="com.wikitude.samples.SampleCamActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +61,7 @@
         <activity android:name="com.wikitude.samples.SamplePoiDetailActivity"/>
         
         <!-- cam activities -->
-        <activity android:name="com.wikitude.samples.SampleCamActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <!-- <activity android:name="com.wikitude.samples.SampleCamActivity" android:configChanges="orientation|keyboardHidden|screenSize"/> -->
         <activity android:name="com.wikitude.samples.SampleCamCaptureScreenActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name="com.wikitude.samples.SampleCamContentFromNativeActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name="com.wikitude.samples.SampleCamHandlePoiDetailActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
