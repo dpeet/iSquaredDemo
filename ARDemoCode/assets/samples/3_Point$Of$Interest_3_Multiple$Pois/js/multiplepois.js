@@ -22,7 +22,7 @@ var World = {
 		// start loading marker assets
 		World.markerDrawable_idle = new AR.ImageResource("assets/marker_idle.png");
 		World.markerDrawable_selected = new AR.ImageResource("assets/marker_selected.png");
-
+/* Old way (for random values)
 		// loop through POI-information and create an AR.GeoObject (=Marker) per POI
 		for (var currentPlaceNr = 0; currentPlaceNr < poiData.length; currentPlaceNr++) {
 			var singlePoi = {
@@ -36,7 +36,45 @@ var World = {
 
 			World.markerList.push(new Marker(singlePoi));
 		}
-
+*/		
+		// Hardcoding some json, can implement better ways later
+		var singlePoi = {
+			"id": 1,
+			"latitude": 33.77719238900398,
+			"longitude": -84.39636077731848,
+			"altitude": 931.262,
+			"title": "Officer TPeet",
+			"description": "Unauthorized access at Klaus"
+		};
+		World.markerList.push(new Marker(singlePoi));
+		singlePoi = {
+			"id": 2,
+			"latitude": 33.77357165675516,
+			"longitude": -84.39331378787756,
+			"altitude": 953.575,
+			"title": "K-9 Unit 1",
+			"description": "Executing stadium bomb sweep" 
+		};
+		World.markerList.push(new Marker(singlePoi));
+		singlePoi = {
+			"id": 3,
+			"latitude": 33.77432078632756,
+			"longitude": -84.39837779849768,
+			"altitude": 945.574,
+			"title": "Deputy Jackson",
+			"description": "Theft reported at Student Center"
+		};
+		World.markerList.push(new Marker(singlePoi));
+		singlePoi = {
+			"id": 4,
+			"latitude": 33.779124061744064,
+			"longitude": -84.4016127102077,
+			"altitude": 925.885,
+			"title": "Technician Saylor",
+			"description": "At GTPD Station: On Call"
+		};
+		World.markerList.push(new Marker(singlePoi));
+		
 		World.updateStatusMessage(currentPlaceNr + ' places loaded');
 	},
 
