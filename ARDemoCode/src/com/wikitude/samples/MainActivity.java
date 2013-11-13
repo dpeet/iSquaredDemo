@@ -102,7 +102,7 @@ public class MainActivity extends ListActivity{
 		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
 		
 		
-		// launch activity
+	
 		Log.d("DebugIntent", "DebugIntent " + intent.toString());
 		String Tag = "DebugIntent";
 		Bundle bundle = intent.getExtras();
@@ -115,7 +115,7 @@ public class MainActivity extends ListActivity{
 		        value.toString(), value.getClass().getName()));
 		}
 		
-		
+		// launch activity
 		this.startActivity(intent);
 		
 		

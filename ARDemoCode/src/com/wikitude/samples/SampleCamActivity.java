@@ -50,7 +50,8 @@ public class SampleCamActivity extends AbstractArchitectCamActivity {
 		*/
 		
 		
-		return "3_Point$Of$Interest_3_Multiple$Pois";
+		return "samples/3_Point$Of$Interest_3_Multiple$Pois/index.html";
+		//Log.d("debugstuff", "debugsample: " + getIntent().getExtras().getString(EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL));
 		//return getIntent().getExtras().getString(EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL);
 	}
 

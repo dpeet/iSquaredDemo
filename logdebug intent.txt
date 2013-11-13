@@ -11,17 +11,17 @@
 11-12 00:23:24.242: I/ActivityManager(766): START u0 {cmp=com.wikitude.sdksamples/com.wikitude.samples.SampleCamActivity (has extras)} from pid 28421
 
 
-		final String activityTitle = "3. Point Of Interest";
-		String[] activityTitles = new String[1];
-		String[] activityUrls = new String[1];
-		String[] activityClasses = new String[1];
-		
-		activityTitles[0] = "3.3 Multiple Pois";
-		activityUrls[0] = "3_Point$Of$Interest_3_Multiple$Pois";
-		activityClasses[0] = "com.wikitude.samples.SampleCamActivity";
-		
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_ARCHITECT_WORLD_URLS_ARRAY, activityUrls);
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
-		intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
+final String activityTitle = "3. Point Of Interest";
+String[] activityTitles = new String[1];
+String[] activityUrls = new String[1];
+String[] activityClasses = new String[1];
+
+activityTitles[0] = "3.3 Multiple Pois";
+activityUrls[0] = "3_Point$Of$Interest_3_Multiple$Pois";
+activityClasses[0] = "com.wikitude.samples.SampleCamActivity";
+
+intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_ARCHITECT_WORLD_URLS_ARRAY, activityUrls);
+intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_CLASSNAMES_ARRAY, activityClasses);
+intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITIES_TILES_ARRAY, activityTitles);
+intent.putExtra(MainSamplesListActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, activityTitle);
 		
